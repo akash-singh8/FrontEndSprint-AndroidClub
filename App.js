@@ -6,6 +6,11 @@ import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import Dashboard from "./Components/Dashboard";
 
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
 
@@ -31,9 +36,30 @@ export default function App() {
 
   return (
     fontLoaded && (
-      <>
-        <Dashboard />
-      </>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="OnBoarding">
+          <Stack.Screen
+            name="OnBoarding"
+            component={OnBoarding}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Signup"
+            component={Signup}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Dashboard"
+            component={Dashboard}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     )
   );
 }

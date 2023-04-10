@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 
-const Login = () => {
+const Login = ({ navigation }) => {
   return (
     <View style={styles.loginContainer}>
       <Image
@@ -64,14 +64,22 @@ const Login = () => {
           Forgot Password?
         </Text>
 
-        <Pressable style={styles.LoginButton}>
+        <Pressable
+          style={styles.LoginButton}
+          onPress={() => {
+            navigation.navigate("Dashboard");
+          }}>
           <Text style={[styles.LoginButtonText, { color: "#fff" }]}>LOGIN</Text>
         </Pressable>
 
-        <View style={styles.footer}>
+        <Pressable
+          style={styles.footer}
+          onPress={() => {
+            navigation.navigate("Signup");
+          }}>
           <Text style={styles.footerText1}>I am a new user!</Text>
           <Text style={styles.footerText2}>Sign Up</Text>
-        </View>
+        </Pressable>
       </View>
     </View>
   );

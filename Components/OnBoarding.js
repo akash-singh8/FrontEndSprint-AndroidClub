@@ -1,7 +1,7 @@
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import React from "react";
 
-const OnBoarding = () => {
+const OnBoarding = ({ navigation }) => {
   return (
     <View style={styles.onBoardContainer}>
       <View style={styles.header}>
@@ -22,11 +22,19 @@ const OnBoarding = () => {
         style={styles.helmet}
       />
 
-      <Pressable style={styles.signUpButton}>
+      <Pressable
+        style={styles.signUpButton}
+        onPress={() => {
+          navigation.navigate("Signup");
+        }}>
         <Text style={styles.signUpButtonColor}>SIGN UP</Text>
       </Pressable>
 
-      <Pressable style={[styles.signUpButton, { backgroundColor: "#F40000" }]}>
+      <Pressable
+        style={[styles.signUpButton, { backgroundColor: "#F40000" }]}
+        onPress={() => {
+          navigation.navigate("Login");
+        }}>
         <Text style={[styles.signUpButtonColor, { color: "#fff" }]}>LOGIN</Text>
       </Pressable>
 

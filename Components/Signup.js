@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React from "react";
 
-const Signup = () => {
+const Signup = ({ navigation }) => {
   return (
     <ScrollView style={styles.loginContainer}>
       <Image
@@ -71,16 +71,24 @@ const Signup = () => {
           </View>
         </View>
 
-        <Pressable style={styles.LoginButton}>
+        <Pressable
+          style={styles.LoginButton}
+          onPress={() => {
+            navigation.navigate("Dashboard");
+          }}>
           <Text style={[styles.LoginButtonText, { color: "#fff" }]}>
             SIGN UP
           </Text>
         </Pressable>
 
-        <View style={styles.footer}>
+        <Pressable
+          style={styles.footer}
+          onPress={() => {
+            navigation.navigate("Login");
+          }}>
           <Text style={styles.footerText1}>I am already a member!</Text>
           <Text style={styles.footerText2}>Login</Text>
-        </View>
+        </Pressable>
       </View>
     </ScrollView>
   );
