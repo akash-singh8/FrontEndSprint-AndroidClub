@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import OnBoarding from "./Components/OnBoarding";
 import Login from "./Components/Login";
+import Signup from "./Components/Signup";
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -30,7 +31,7 @@ export default function App() {
   return (
     fontLoaded && (
       <>
-        <Login />
+        <Signup />
       </>
     )
   );
