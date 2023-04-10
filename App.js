@@ -1,7 +1,7 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import { useEffect, useState } from "react";
+
+import OnBoarding from "./Components/OnBoarding";
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -28,21 +28,9 @@ export default function App() {
 
   return (
     fontLoaded && (
-      <View style={styles.container}>
-        <Text style={{ fontFamily: "Montserrat-Regular" }}>
-          Open up App.js to start working on your app!
-        </Text>
-        <StatusBar style="auto" />
-      </View>
+      <>
+        <OnBoarding />
+      </>
     )
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
