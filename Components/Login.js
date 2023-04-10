@@ -5,12 +5,13 @@ import {
   Image,
   TextInput,
   Pressable,
+  ScrollView,
 } from "react-native";
 import React from "react";
 
 const Login = ({ navigation }) => {
   return (
-    <View style={styles.loginContainer}>
+    <ScrollView style={styles.loginContainer}>
       <Image
         source={require("../assets/Images/LoginTop.png")}
         style={styles.loginTop}
@@ -81,7 +82,7 @@ const Login = ({ navigation }) => {
           <Text style={styles.footerText2}>Sign Up</Text>
         </Pressable>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     columnGap: 8,
     justifyContent: "center",
-    marginTop: 30,
+    marginVertical: 30,
   },
 
   footerText1: {
