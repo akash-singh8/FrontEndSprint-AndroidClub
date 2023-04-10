@@ -2,6 +2,7 @@ import * as Font from "expo-font";
 import { useEffect, useState } from "react";
 
 import OnBoarding from "./Components/OnBoarding";
+import Login from "./Components/Login";
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -29,7 +30,7 @@ export default function App() {
   return (
     fontLoaded && (
       <>
-        <OnBoarding />
+        <Login />
       </>
     )
   );
